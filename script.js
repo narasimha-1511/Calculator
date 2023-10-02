@@ -6,7 +6,8 @@ let arr = Array.from(buttons);
 arr.forEach(button =>{
     button.addEventListener("click", (e)=>{
         if(e.target.innerHTML == '='){
-            string = eval(string);
+             string = eval(string); 
+           // console.log(string);
             input.value = string;
         }
         else if(e.target.innerHTML == 'AC'){
@@ -18,7 +19,14 @@ arr.forEach(button =>{
             input.value= string;
         }
         else{
-            string+= e.target.innerHTML;
+            //console.log(Number(e.target.innerHTML));
+            if (e.target.innerHTML != 0) 
+            string += e.target.innerHTML;
+            else {
+              if (Number(string) > 0) {
+                string += e.target.innerHTML;
+              }
+            }
             input.value = string;
         }
        
