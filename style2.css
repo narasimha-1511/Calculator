@@ -80,7 +80,7 @@ button {
     color: #e74c3c;
 }
 
-/* Hover effect for buttons */
+
 button:hover {
     background-color: rgba(255, 255, 255, 0.4);
     color: #fff;
@@ -88,7 +88,7 @@ button:hover {
     transition: transform 0.3s, background-color 0.3s, color 0.3s;
 }
 
-/* Active effect for buttons when clicked */
+
 button:active {
     background-color: rgba(255, 255, 255, 0.6);
     color: #fff;
@@ -96,7 +96,7 @@ button:active {
     transition: transform 0.1s, background-color 0.1s, color 0.1s;
 }
 
-/* Styling for the Undo button */
+
 #undoButton {
     background-color: #ff4d4d;
     font-weight: bold;
