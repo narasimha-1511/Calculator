@@ -14,7 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(45deg, #4c0e62, #3a175e, #3c4b70);
-    animation: gradientAnimation 10s ease infinite alternate; /* Add the animation here */
+    animation: gradientAnimation 10s ease infinite alternate;
     transition: background-color 0.3s;
 }
 
@@ -80,7 +80,7 @@ button {
     color: #e74c3c;
 }
 
-
+/* Hover effect*/
 button:hover {
     background-color: rgba(255, 255, 255, 0.4);
     color: #fff;
@@ -88,7 +88,7 @@ button:hover {
     transition: transform 0.3s, background-color 0.3s, color 0.3s;
 }
 
-
+/* Active effect for buttons when clicked */
 button:active {
     background-color: rgba(255, 255, 255, 0.6);
     color: #fff;
@@ -96,17 +96,48 @@ button:active {
     transition: transform 0.1s, background-color 0.1s, color 0.1s;
 }
 
+/*for devices with a max width of 600px */
+@media only screen and (max-width: 600px) {
+    body {
+        /* Adjust styles as needed for smaller screens */
+    }
 
-#undoButton {
-    background-color: #ff4d4d;
-    font-weight: bold;
-    border: 2px solid #fff;
+    .calculator {
+        /* Adjust styles as needed for smaller screens */
+    }
+
+    input {
+        /* Adjust styles as needed for smaller screens */
+        width: 280px;
+        font-size: 40px;
+    }
+
+    button {
+        /* Adjust styles as needed for smaller screens */
+        width: 55px;
+        height: 55px;
+        font-size: 18px;
+    }
 }
 
-#undoButton:hover {
-    background-color: #ff1a1a;
-}
+/* Media query for devices with a max width of 400px */
+@media only screen and (max-width: 400px) {
+    body {
+    }
 
-#undoButton:active {
-    background-color: #ff6666;
+    .calculator {
+    }
+
+    input {
+        /* Adjust styles as needed for even smaller screens */
+        width: 240px;
+        font-size: 30px;
+    }
+
+    button {
+        /* Adjust styles as needed for even smaller screens */
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
 }
