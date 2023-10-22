@@ -1,38 +1,36 @@
-let input = document.getElementById("inputBox");
-
-
+const input = document.getElementById("inputBox");
 let string = "";
 
-let operators = document.getElementsByClassName("oper");
-
-for (i = 0; i < operators.length; i++) {
+const operators = document.getElementsByClassName("oper");
+for (let i = 0; i < operators.length; i++) {
   operators[i].addEventListener("click", (e) => {
-    if (Number(string) != 0) {
-      let char = string.at(-1);
-      console.log(char);
+    if (Number(string) !== 0) {
+      const char = string.at(-1);
       let add = true;
       if (
-        char == "/" ||
-        char == "%" ||
-        char == "*" ||
-        char == "+" ||
-        char == "-"
+        char === "/" ||
+        char === "%" ||
+        char === "*" ||
+        char === "+" ||
+        char === "-"
       ) {
         add = false;
       }
-
-      if (add == true) string += e.target.innerHTML;
-      input.value = string;
+      if (add) {
+        string += e.target.innerHTML;
+        input.value = string;
+      }
     }
   });
 }
 
-let numbers = document.getElementsByClassName("numbers");
-for (i = 0; i < numbers.length; i++) {
+const numbers = document.getElementsByClassName("numbers");
+for (let i = 0; i < numbers.length; i++) {
   numbers[i].addEventListener("click", (e) => {
-    if (e.target.innerHTML != 0) string += e.target.innerHTML;
-    else {
-      if (Number(string) != 0) {
+    if (e.target.innerHTML !== "0") {
+      string += e.target.innerHTML;
+    } else {
+      if (Number(string) !== 0) {
         string += e.target.innerHTML;
       }
     }
@@ -40,17 +38,17 @@ for (i = 0; i < numbers.length; i++) {
   });
 }
 
-document.getElementById("equalButn").addEventListener("click", (e) => {
+document.getElementById("equalButn").addEventListener("click", () => {
   string = eval(string);
   input.value = string;
 });
 
-document.getElementById("clear").addEventListener("click", (e) => {
+document.getElementById("clear").addEventListener("click", () => {
   string = "";
   input.value = "";
 });
 
-document.getElementById("del").addEventListener("click", (e) => {
+document.getElementById("del").addEventListener("click", () => {
   string = string.slice(0, string.length - 1);
   input.value = string;
 });
